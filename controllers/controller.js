@@ -6,9 +6,7 @@ exports.getData = (req, res, next) => {
     .find()
     .exec()
     .then(result => {
-      res.status(200).json({
-        test: "test"
-      })
+      res.render("index", { test: "Hello World" })
     })
-    .catch(err => {})
+    .catch(err => { })
 }

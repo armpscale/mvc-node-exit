@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 require('dotenv').config()
-// const route = require('./routes/route')
+const route = require('./routes/route')
 /**
  * configure app
  */
@@ -39,10 +39,10 @@ mongoose.connect(
 /**
  * define Routers
  */
-// app.use('/', route)
+app.use('/', route)
 /**
  * listen connected
  */
 app.listen(process.env.PORT, () => {
-  console.log('connection on port : ' + process.env.PORT)
+  console.log('Server connection on port : ' + process.env.PORT)
 })
