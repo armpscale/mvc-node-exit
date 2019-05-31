@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
 
-const addModel = mongoose.Schema({
+const accountSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  name: { type: String, required: true }
+  accountNumber: { type: String, required: true },
+  accountPassword: { type: String, required: true, maxlength: 4 },
+  endingBalance: { type: Number },
 })
 
-module.exports = mongoose.model('model', addModel)
+module.exports = mongoose.model('account', accountSchema)
